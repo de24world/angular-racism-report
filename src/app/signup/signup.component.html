@@ -1,13 +1,19 @@
 <p>signup works!</p>
-<!-- <form [formGroup]="signin"> -->
-<mat-form-field appearance="fill">
-  <mat-label>Enter your email</mat-label>
-  <input
-    matInput
-    placeholder="pat@example.com"
-    [formControl]="email"
-    required
-  />
-  <mat-error *ngIf="email.invalid">{{ getErrorMessage() }}</mat-error>
-</mat-form-field>
-<!-- </form> -->
+<section class="signup-form">
+  <form fxLayout="column" fxLayoutAlign="center center">
+    <mat-form-field appearance="fill">
+      <mat-label>Enter your email</mat-label>
+      <input
+        matInput
+        placeholder="pat@example.com"
+        [formControl]="email"
+        required
+      />
+      <mat-error *ngIf="email.invalid">{{ getErrorMessage() }}</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input type="password" matInput placeholder="Your Password" />
+    </mat-form-field>
+    <button mat-raised-button color="primary">Submit</button>
+  </form>
+</section>
