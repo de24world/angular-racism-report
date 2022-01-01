@@ -1,10 +1,17 @@
 <p>signup works!</p>
 <section class="signup-form">
-  <form fxLayout="column" fxLayoutAlign="center center">
+  <form
+    fxLayout="column"
+    fxLayoutAlign="center center"
+    #f="ngForm"
+    (ngSubmit)="onSubmit(f)"
+  >
     <mat-form-field appearance="fill">
       <mat-label>Enter your email</mat-label>
       <input
         matInput
+        ngModel
+        name="email"
         placeholder="pat@example.com"
         [formControl]="email"
         required
@@ -12,7 +19,13 @@
       <mat-error *ngIf="email.invalid">{{ getErrorMessage() }}</mat-error>
     </mat-form-field>
     <mat-form-field>
-      <input type="password" matInput placeholder="Your Password" />
+      <input
+        type="password"
+        ngModel
+        matInput
+        placeholder="Your Password"
+        name="password"
+      />
     </mat-form-field>
     <button type="submit" mat-raised-button color="primary">Submit</button>
   </form>
